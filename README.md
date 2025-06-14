@@ -43,7 +43,7 @@ Este repositorio contiene tres scripts en Python diseñados para la adquisición
   ```json
   {
     "db_host": "localhost",
-    "db_name": "tudb",
+    "db_name": "db_name",
     "db_user": "usuario",
     "db_password": "contraseña",
     "modbus_ip_apis1": "192.168.x.x",

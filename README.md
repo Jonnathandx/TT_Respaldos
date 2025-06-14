@@ -1,6 +1,6 @@
 # Diseño e implementaciónde un sistema de gestion de respaldos y recuperación enfocado en la Micro-Red de la Universidad de Cuenca
 
-Este repositorio contiene tres scripts en Python diseñados para la adquisición y almacenamiento de datos provenientes de las API 1,2 y 3 del laboratorio de Micro-Red de la Universidad de Cuenca, mediante el protocolo Modbus TCP/IP y su posterior registro en una base de datos PostgreSQL.
+Este repositorio contiene los scripts en Python diseñados para la adquisición y almacenamiento de datos provenientes de las API 1,2 y 3 del laboratorio de Micro-Red de la Universidad de Cuenca, mediante el protocolo Modbus TCP/IP y su posterior registro en una base de datos PostgreSQL. Además se incluye el script implementado para la generación del archivo de volcado .sql el cual es empleado para el proceso de backup por la herramienta Bacula.
 
 ## 📂 **Scripts incluidos**
 

@@ -60,12 +60,12 @@ Este repositorio contiene los scripts en Python diseñados para la adquisición 
     "modbus_port": 502
   }
 - Archivo de configuración JSON (`db_config.json`) con parámetros como:
-```json
-  {
-  "db_host": "192.168.x.x",
-  "db_port": 5432,
-  "db_name": "data_base_name",
-  "db_user": "user",
-  "db_password": "password",
-  "output_file": "/home/administrador/scripts/db_scada.sql"
-}
+  ```json
+    {
+    "db_host": "192.168.x.x",
+    "db_port": 5432,
+    "db_name": "data_base_name",
+    "db_user": "user",
+    "db_password": "password",
+    "output_file": "/home/administrador/scripts/db_scada.sql"
+  }

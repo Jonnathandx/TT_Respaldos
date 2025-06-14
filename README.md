@@ -46,11 +46,11 @@ Este repositorio contiene tres scripts en Python diseñados para la adquisición
     "db_name": "tudb",
     "db_user": "usuario",
     "db_password": "contraseña",
-    "modbus_ip_apis1": "192.168.1.10",
-    "modbus_ip_apis2_pb": "192.168.1.11",
-    "modbus_ip_apis2_li": "192.168.1.12",
-    "modbus_ip_apis2_rdx": "192.168.1.13",
-    "modbus_ip_apis2_sc": "192.168.1.14",
-    "modbus_ip_apis3": "192.168.1.15",
+    "modbus_ip_apis1": "192.168.x.x",
+    "modbus_ip_apis2_pb": "192.168.x.x",
+    "modbus_ip_apis2_li": "192.168.x.x",
+    "modbus_ip_apis2_rdx": "192.168.x.x",
+    "modbus_ip_apis2_sc": "192.168.x.x",
+    "modbus_ip_apis3": "192.168.x.x",
     "modbus_port": 502
   }

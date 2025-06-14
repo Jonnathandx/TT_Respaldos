@@ -32,7 +32,7 @@ Este repositorio contiene los scripts en Python diseñados para la adquisición 
 
 ---
 
-### `pg_dump.py`
+### `gen_volcado_file.py`
 - Genera el archivo de volcado de la base de datos de las API 1, 2, 3.
 
 ---

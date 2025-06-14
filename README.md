@@ -32,6 +32,11 @@ Este repositorio contiene los scripts en Python diseñados para la adquisición 
 
 ---
 
+### `pg_dump.py`
+- Genera el archivo de volcado de la base de datos de las API 1, 2, 3.
+
+---
+
 ## ⚙️ **Requisitos**
 
 - Python 3.12
@@ -42,10 +47,10 @@ Este repositorio contiene los scripts en Python diseñados para la adquisición 
 - Archivo de configuración JSON (`config.json`) con parámetros como:
   ```json
   {
-    "db_host": "localhost",
-    "db_name": "db_name",
+    "db_host": "192.168.x.x",
+    "db_name": "date_base_name",
     "db_user": "usuario",
-    "db_password": "contraseña",
+    "db_password": "password",
     "modbus_ip_apis1": "192.168.x.x",
     "modbus_ip_apis2_pb": "192.168.x.x",
     "modbus_ip_apis2_li": "192.168.x.x",
@@ -54,3 +59,13 @@ Este repositorio contiene los scripts en Python diseñados para la adquisición 
     "modbus_ip_apis3": "192.168.x.x",
     "modbus_port": 502
   }
+- Archivo de configuración JSON (`db_config.json`) con parámetros como:
+```json
+  {
+  "db_host": "192.168.x.x",
+  "db_port": 5432,
+  "db_name": "data_base_name",
+  "db_user": "user",
+  "db_password": "password",
+  "output_file": "/home/administrador/scripts/db_scada.sql"
+}

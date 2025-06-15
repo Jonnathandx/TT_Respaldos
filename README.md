@@ -32,8 +32,14 @@ Este repositorio contiene los scripts en Python diseñados para la adquisición 
 
 ---
 
-### `gen_volcado_file.py`
-- Genera el archivo de volcado de la base de datos de las API 1, 2, 3.
+### `backup_dbscada.py`
+- Genera el respaldo lógico de la base de datos de las API 1, 2, 3.
+- Como salida se obtiene un archivo .sql
+
+---
+
+### `restore_dbscada.py`
+- Carga el respaldo lógico, permite la restauración de la base de datos.
 
 ---
 

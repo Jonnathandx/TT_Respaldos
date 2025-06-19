@@ -5,7 +5,7 @@ import json
 import sys
 
 # Define la ruta al archivo de configuración JSON
-CONFIG_FILE = '/home/administrador/scripts/db_config.json'
+CONFIG_FILE = '/home/administrador/scripts/config.json'
 
 try:
     # Abre y lee el archivo JSON
@@ -14,16 +14,26 @@ try:
     
     # Extrae los datos de configuración del diccionario
     db_host = config.get('db_host')
+    db_port = config.get('db_port')
     db_name = config.get('db_name')
     db_user = config.get('db_user')
     db_password = config.get('db_password')
+    output_file = config.get('output_file')
     
-    # Construye la cadena de conexión para pg_dump
-    connection_string = f'"host={db_host} user={db_user} dbname={db_name} -f /home/administrador/scripts/db_scada.sql"'
+    # Construye la cadena de conexión para psql
+    connection_string = f'"host={db_host} port={db_port} user={db_user} dbname={db_name}"'
     
     # Se construye el comando de psql
-    command = f'PGPASSWORD={db_password} psql -d {connection_string}'
+    command = f'PGPASSWORD={db_password} psql -d {connection_string} -f {output_file}'
     
+    result = os.system(command)
+
+    if result == 0:
+        print("Recuperacion de la base de datos completada con exito.")
+    else:
+        print(f"Error: psql falló con código de salida {result}.", file=sys.stderr)
+        sys.exit(result)
+
 except FileNotFoundError:
     print(f"Error: El archivo de configuración '{CONFIG_FILE}' no fue encontrado.", file=sys.stderr)
     sys.exit(1)

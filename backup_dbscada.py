@@ -5,7 +5,7 @@ import json
 import sys
 
 # Define la ruta al archivo de configuración JSON
-CONFIG_FILE = '/home/administrador/scripts/db_config.json'
+CONFIG_FILE = '/home/administrador/scripts/config.json'
 
 try:
     # Abre y lee el archivo JSON

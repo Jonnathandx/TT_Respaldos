@@ -13,18 +13,15 @@ try:
         config = json.load(f)
     
     # Extrae los datos de configuración del diccionario
-    db_host = config.get('db_host')
-    db_port = config.get('db_port')
     db_name = config.get('db_name')
     db_user = config.get('db_user')
-    db_password = config.get('db_password')
     output_file = config.get('output_file')
     
     # Construye la cadena de conexión para psql
-    connection_string = f'"host={db_host} port={db_port} user={db_user} dbname={db_name}"'
+    connection_string = f'"user={db_user} dbname={db_name}"'
     
     # Se construye el comando de psql
-    command = f'PGPASSWORD={db_password} psql -d {connection_string} -f {output_file}'
+    command = f'docker exec -i postgres psql -d {connection_string} < {output_file}'
     
     result = os.system(command)
 

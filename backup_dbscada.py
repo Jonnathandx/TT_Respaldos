@@ -1,4 +1,4 @@
-#!/bin/python3.12
+#!/bin/env python3.12
 
 import os
 import json
@@ -13,23 +13,16 @@ try:
         config = json.load(f)
 
     # Extrae los datos de configuración del diccionario
-    db_host = config.get('db_host')
-    db_port = config.get('db_port')
     db_name = config.get('db_name')
     db_user = config.get('db_user')
-    db_password = config.get('db_password')
     output_file = config.get('output_file')
 
-    # Verifica que se hayan leído todos los datos necesarios
-    if not all([db_host, db_port, db_name, db_user, db_password, output_file]):
-        print(f"Error: Faltan parámetros de configuración en '{CONFIG_FILE}'.", file=sys.stderr)
-        sys.exit(1) # Sale con código de error
-
     # Construye la cadena de conexión para pg_dump
-    connection_string = f'"host={db_host} port={db_port} dbname={db_name} user={db_user} password={db_password}"'
+    # Usamos comillas dobles alrededor de la cadena de conexión para manejar espacios o caracteres especiales
+    connection_string = f'"user={db_user} dbname={db_name}"'
 
     # Construye el comando completo de pg_dump
-    command = f'pg_dump -d {connection_string} -f {output_file}'
+    command = f'docker exec postgres pg_dump -d {connection_string} > {output_file}'
 
     # Ejecuta el comando en el sistema operativo
     result = os.system(command)

@@ -2,6 +2,11 @@
 
 Este repositorio contiene los scripts en Python diseñados para la adquisición y almacenamiento de datos provenientes de las API 1, 2 y 3 del laboratorio de Micro-Red de la Universidad de Cuenca, mediante el protocolo Modbus TCP/IP y su posterior registro en una base de datos PostgreSQL. Además se incluye los scripts implementados para la generación y carga del respaldo lógico .sql. El script `backup_dbscada.py` es ejecutado por la herramienta Bacula previo a un backup job y el script `restore_dbscada.py` es ejecutado después de un restore job por la misma herramienta.
 
+## 📂 **Docker File**
+- Se define los 3 servicios a utilizar: Bacula, PostgreSQL y Grafana.
+- Se exponen puertos.
+- Se definen volúmenes para persistencia de datos.
+- Se definen variables de ambiente.
 ## 📂 **Scripts incluidos**
 
 ### `capture_apis1.py`
